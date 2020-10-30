@@ -32,13 +32,13 @@ counterForm.addEventListener('submit' , function(evt){
   }
   
   
-  var timePerson = parseFloat((inputValue / speedPerson).toFixed(3) , 10) ;
+  var timePerson = parseFloat((inputValue / speedPerson).toFixed(2) , 10) ;
   
-  var timeBycle = parseFloat((inputValue / speedBycle).toFixed(3) , 10) ;
+  var timeBycle = parseFloat((inputValue / speedBycle).toFixed(2) , 10) ;
   
-  var timeCar = parseFloat((inputValue / speedCar).toFixed(3) , 10) ;
+  var timeCar = parseFloat((inputValue / speedCar).toFixed(2) , 10) ;
   
-  var timePlane = parseFloat((inputValue / speedPlane).toFixed(4) , 10) ;
+  var timePlane = parseFloat((inputValue / speedPlane).toFixed(3) , 10) ;
   
   resultPerson.textContent = timePerson + " soat";
   
