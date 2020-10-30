@@ -42,7 +42,7 @@ counterForm.addEventListener('submit' , function(evt){
   
   resultPerson.textContent = timePerson + " soat";
   
-  resultBycle.textContent = timeBycle + "soat";
+  resultBycle.textContent = timeBycle + " soat";
   
   resultCar.textContent = timeCar + " soat";
   
