@@ -27,6 +27,7 @@ counterForm.addEventListener('submit' , function(evt){
   var inputValue = parseFloat(counterInput.value.trim() , 10);
   
   if (inputValue < 0 ){
+    alert('sonni musbat kititing')
     return
   }
   
