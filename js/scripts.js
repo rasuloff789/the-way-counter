@@ -39,16 +39,30 @@ counterForm.addEventListener('submit' , function(evt){
   
   var timePlane = parseFloat((inputValue / speedPlane).toFixed(4) , 10) ;
   
-  resultPerson.textContent = timePerson;
+  resultPerson.textContent = timePerson + " soat";
   
-  resultBycle.textContent = timeBycle;
+  resultBycle.textContent = timeBycle + "soat";
   
-  resultCar.textContent = timeCar;
+  resultCar.textContent = timeCar + " soat";
   
-  resultPlane.textContent = timePlane;
+  resultPlane.textContent = timePlane + " soat";
   
-  
-  
+  if (timePerson < 1){
+    var timeMinPerson = timePerson * 60
+    resultPerson.textContent = timeMinPerson.toFixed(2) + " minut";
+  }
+  if (timeBycle < 1){
+    var timeMinBycle = timeBycle * 60
+    resultBycle.textContent = timeMinBycle.toFixed(2) + " minut";
+  }
+  if (timeCar < 1){
+    var timeMinCar = timeCar * 60
+    resultCar.textContent = timeMinCar.toFixed(2) + " minut";
+  }
+  if (timePlane < 1){
+    var timeMinPlane = timePlane * 60
+    resultPlane.textContent = timeMinPlane.toFixed(2) + " minut";
+  }
   
   console.log(timePerson);
 })
