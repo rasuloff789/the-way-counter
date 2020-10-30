@@ -45,11 +45,11 @@ counterForm.addEventListener('submit' , function(evt){
   
   var timePlane = parseFloat((inputValue / speedPlane).toFixed(3) , 10) ;
   
-  resultPerson.textContent = timePerson + " soat";
+  resultPerson.textContent = timePerson + " soat ";
   
-  resultBycle.textContent = timeBycle + " soat";
+  resultBycle.textContent = timeBycle + " soat ";
   
-  resultCar.textContent = timeCar + " soat";
+  resultCar.textContent = timeCar + " soat ";
   
   resultPlane.textContent = timePlane + " soat";
 
@@ -58,7 +58,12 @@ counterForm.addEventListener('submit' , function(evt){
   if (timePerson < 1){
     var timeMinPerson = timePerson * 60
     resultPerson.textContent = timeMinPerson.toFixed(2) + " minut";
+  } else{
+    var timeMinPerson = timePerson * 60
+    resultPerson.textContent += timeMinPerson.toFixed(2) + " minut";
+    
   }
+
   if (timeBycle < 1){
     var timeMinBycle = timeBycle * 60
     resultBycle.textContent = timeMinBycle.toFixed(2) + " minut";
