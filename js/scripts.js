@@ -3,22 +3,30 @@ var counterInput =  counterForm.querySelector('.counter-input');
 var counterBtn =  counterForm.querySelector('.counter-btn');
 
 var resultList = document.querySelector('.result-list');
-var resultPerson = resultList.querySelector('.counter-person');
 
-var resultBycle = resultList.querySelector('.counter-velosiped');
+var resultPersonInHour = resultList.querySelector('.counter-person-in-hour');
 
-var resultCar = resultList.querySelector('.counter-car');
+var resultBycleInHour = resultList.querySelector('.counter-velosiped-in-hour');
 
-var resultPlane = resultList.querySelector('.counter-plane');
+var resultCarInHour = resultList.querySelector('.counter-car-in-hour');
 
+var resultPlaneInHour = resultList.querySelector('.counter-plane-in-hour');
 
-var speedPerson = 3.6 ;
+var resultPersonInMin = resultList.querySelector('.counter-person-in-min');
 
-var speedBycle = 20.1 ;
+var resultBycleInMin = resultList.querySelector('.counter-velosiped-in-min');
 
-var speedCar = 70 ;
+var resultCarInMin = resultList.querySelector('.counter-car-in-min');
 
-var speedPlane = 800 ; 
+var resultPlaneInMin = resultList.querySelector('.counter-plane-in-min');
+
+var speedPerson = 0.06 ;
+
+var speedBycle = 0.335 ;
+
+var speedCar = 1.15 ;
+
+var speedPlane = 13.332 ; 
 
 counterForm.addEventListener('submit' , function(evt){
   evt.preventDefault();
@@ -26,57 +34,57 @@ counterForm.addEventListener('submit' , function(evt){
   
   var inputValue = parseFloat(counterInput.value.trim() , 10);
   
-  if (inputValue < 0 ){
-    alert('sonni musbat kititing')
-    return
-  }
-
-  if (inputValue < 0.5){
-    alert(`ko'proq yurish sog'liq uchun foydali`)
-    return;
-  }
   
-  
-  var timePerson = parseFloat((inputValue / speedPerson).toFixed(2) , 10) ;
-  
-  var timeBycle = parseFloat((inputValue / speedBycle).toFixed(2) , 10) ;
-  
-  var timeCar = parseFloat((inputValue / speedCar).toFixed(2) , 10) ;
-  
-  var timePlane = parseFloat((inputValue / speedPlane).toFixed(3) , 10) ;
-  
-  resultPerson.textContent = timePerson + " soat ";
-  
-  resultBycle.textContent = timeBycle + " soat ";
-  
-  resultCar.textContent = timeCar + " soat ";
-  
-  resultPlane.textContent = timePlane + " soat";
-
-
-  
-  if (timePerson < 1){
-    var timeMinPerson = timePerson * 60
-    resultPerson.textContent = timeMinPerson.toFixed(2) + " minut";
-  } else{
-    var timeMinPerson = timePerson * 60
-    resultPerson.textContent += timeMinPerson.toFixed(2) + " minut";
+  if (isNaN(inputValue)){
+    alert(`Boshingiz ishlamayapti menimcha. Men bugun ${counterInput.value} km yurdim demaysizku :(( 
+      Yoki botmisan to'grisini ayt :))`)
+      return;
+    }
     
-  }
-
-  if (timeBycle < 1){
-    var timeMinBycle = timeBycle * 60
-    resultBycle.textContent = timeMinBycle.toFixed(2) + " minut";
-  }
-  if (timeCar < 1){
-    var timeMinCar = timeCar * 60
-    resultCar.textContent = timeMinCar.toFixed(2) + " minut";
-  }
-  if (timePlane < 1){
-    var timeMinPlane = timePlane * 60
-    resultPlane.textContent = timeMinPlane.toFixed(2) + " minut";
-  }
+    
+    if (inputValue < 0 ){
+      alert(` Orqaga yurayotgan bo'lsangiz ham sonni musbat kititing ! :))`);
+      counterInput.value = "";
+      resultPersonInHour.textContent = "0" ;
+      resultPersonInMin.textContent = "0" ;
+      resultBycleInHour.textContent = "0" ;
+      resultBycleInMin.textContent = "0" ;
+      resultCarInHour.textContent = "0" ;
+      resultCarInMin.textContent = "0" ;
+      resultPlaneInHour.textContent = "0" ;
+      resultPlaneInMin.textContent = "0" ;
+      return
+    }
+    
+    
+    var timePersonInHour = Math.trunc((inputValue / speedPerson) / 60);
+    var timePersonInMin = Math.floor((inputValue / speedPerson) % 60);
+    resultPersonInHour.textContent = timePersonInHour ;
+    resultPersonInMin.textContent = timePersonInMin ;
+    
+    
+    //velo result on display :))
+    
+    var timeBycleInHour = Math.trunc((inputValue / speedBycle) / 60);
+    var timeBycleInMin = Math.floor((inputValue / speedBycle) % 60);
+    resultBycleInHour.textContent = timeBycleInHour ;
+    resultBycleInMin.textContent = timeBycleInMin ;
+    
+    //car result on display :))
+    
+    var timeCarInHour = Math.trunc((inputValue / speedCar) / 60);
+    var timeCarInMin = Math.floor((inputValue / speedCar) % 60);
+    resultCarInHour.textContent = timeCarInHour ;
+    resultCarInMin.textContent = timeCarInMin ;
+    
+    //result plane on display :))
+    
+    var timePlaneInHour = Math.trunc((inputValue / speedPlane) / 60);
+    var timePlaneInMin = Math.floor((inputValue / speedPlane) % 60);
+    resultPlaneInHour.textContent = timePlaneInHour ;
+    resultPlaneInMin.textContent = timePlaneInMin ;
+    
+    
+  })
   
-  console.log(timePerson);
-})
-
+  
