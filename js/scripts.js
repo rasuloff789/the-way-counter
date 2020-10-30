@@ -30,6 +30,11 @@ counterForm.addEventListener('submit' , function(evt){
     alert('sonni musbat kititing')
     return
   }
+
+  if (inputValue < 0.5){
+    alert(`ko'proq yurish sog'liq uchun foydali`)
+    return;
+  }
   
   
   var timePerson = parseFloat((inputValue / speedPerson).toFixed(2) , 10) ;
@@ -47,6 +52,8 @@ counterForm.addEventListener('submit' , function(evt){
   resultCar.textContent = timeCar + " soat";
   
   resultPlane.textContent = timePlane + " soat";
+
+
   
   if (timePerson < 1){
     var timeMinPerson = timePerson * 60
