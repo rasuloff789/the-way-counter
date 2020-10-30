@@ -3,15 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>55-dars. Bootstrap. container va boshqa umumiy masalalar</title>
+  <title>The Way counter</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Livvic:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   
- 
+  
+  <div class="container d-flex flex-column align-items-center">
+    <h2 class="h2 text-success text-center">The Way counter</h2>
+    <form action="https://echo.htmlacademy.ru" class="counter-form form-group d-flex w-50 align-items-center justify-content-between">
+      <span class="text-info">
+        Masofa (km)
+      </span>
+      
+      <input type="number" name="way"  placeholder="Masofani kiriting" aria-label="masofa" class="counter-input form-control w-50">
+      
+      
+      <button class="counter-btn btn btn-primary " type="submit">Hisobla</button>
+      
+      
+    </form>
+    
+    <ul class="result-list row d-flex justify-content-between list-unstyled">
+      <li class="col-3 border-dark rounded-sm p-4 d-flex flex-column align-items-center">
+        <span class="material-icons">
+          directions_run
+        </span>
+        <span class="text-dark">Piyoda</span>
+        <p class="text-success"> <span class="counter-person">N</span> soat</p>
+      </li>
+      <li class="col-3 border-dark rounded-sm p-4 d-flex flex-column align-items-center">
+        <span class="material-icons">
+          directions_bike
+        </span>
+        <span class="text-dark">Velosiped</span>
+        <p class="text-success"> <span class="counter-velosiped">N</span> soat</p>
+      </li>
+      <li class="col-3 border-dark rounded-sm p-4 d-flex flex-column align-items-center">
+        <span class="material-icons">
+          directions_car
+        </span>
+        <span class="text-dark">Mashina</span>
+        <p class="text-success"> <span class="counter-car">N</span> soat</p>
+      </li>
+      <li class="col-3 border-dark rounded-sm p-4 d-flex flex-column align-items-center">
+        <span class="material-icons">
+          flight
+        </span>
+        <span class="text-dark">Samolyot</span>
+        <p class="text-success"> <span class="counter-plane">N</span> soat</p>
+      </li>
+      
+    </ul>
+  </div>
+  
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/scripts.js"></script>
