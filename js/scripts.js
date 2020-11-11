@@ -20,19 +20,19 @@ var resultCarInMin = resultList.querySelector('.counter-car-in-min');
 
 var resultPlaneInMin = resultList.querySelector('.counter-plane-in-min');
 
-var speedPerson = 0.06 ;
+var speedPerson = 0.06;
 
-var speedBycle = 0.335 ;
+var speedBycle = 0.335;
 
-var speedCar = 1.15 ;
+var speedCar = 1.15;
 
-var speedPlane = 13.332 ; 
+var speedPlane = 13.332; 
 
-counterForm.addEventListener('submit' , function(evt){
+counterForm.addEventListener('submit', function(evt){
   evt.preventDefault();
   
   
-  var inputValue = parseFloat(counterInput.value.trim() , 10);
+  var inputValue = parseFloat(counterInput.value.trim(), 10);
   
   
   if (isNaN(inputValue)){
@@ -53,7 +53,7 @@ counterForm.addEventListener('submit' , function(evt){
       resultCarInMin.textContent = "0" ;
       resultPlaneInHour.textContent = "0" ;
       resultPlaneInMin.textContent = "0" ;
-      return
+      return;
     }
     
     
